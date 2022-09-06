@@ -3,24 +3,35 @@ import {
     PrimaryGeneratedColumn,
     Column,
     CreateDateColumn,
+    JoinColumn,
+    ManyToOne,
 } from 'typeorm'
 
+import { User } from './User'
+
 @Entity()
-export class User {
+export class Pet {
     @PrimaryGeneratedColumn()
     id: number
+
+    @JoinColumn()
+    @ManyToOne(() => User, (user) => user.id, { cascade: true })
+    user: User
 
     @Column()
     name: string
 
     @Column()
-    cpf: string
+    type: string
 
     @Column()
-    email: string
+    size: string
 
     @Column()
-    password: string
+    age: number
+
+    @Column()
+    description: string
 
     @CreateDateColumn()
     createdAt: Date

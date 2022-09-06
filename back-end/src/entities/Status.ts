@@ -1,26 +1,17 @@
 import {
     Entity,
     PrimaryGeneratedColumn,
-    Column,
     CreateDateColumn,
+    Column,
 } from 'typeorm'
 
 @Entity()
-export class User {
+export class Status {
     @PrimaryGeneratedColumn()
     id: number
 
     @Column()
     name: string
-
-    @Column()
-    cpf: string
-
-    @Column()
-    email: string
-
-    @Column()
-    password: string
 
     @CreateDateColumn()
     createdAt: Date

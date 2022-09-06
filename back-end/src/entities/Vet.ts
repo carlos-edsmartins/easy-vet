@@ -6,7 +6,7 @@ import {
 } from 'typeorm'
 
 @Entity()
-export class User {
+export class Vet {
     @PrimaryGeneratedColumn()
     id: number
 
@@ -15,6 +15,15 @@ export class User {
 
     @Column()
     cpf: string
+
+    @Column()
+    crmv: string
+
+    @Column()
+    specialization: string
+
+    @Column()
+    price: number
 
     @Column()
     email: string
